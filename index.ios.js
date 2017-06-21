@@ -15,8 +15,9 @@ import { RadioGroup,  RadioButton} from 'react-native-flexi-radio-button';
 import Note from './android/app/components/Note';
 
 export default class Generhey extends Component {
-
+//build contructor
   state = {
+    //keeps array data for task array
     noteArray:[],
     noteText:'',
   }
@@ -39,6 +40,7 @@ export default class Generhey extends Component {
         </View>
 
         <ScrollView style={styles.scrollContainer}>
+      //Display Notes in scrollview container
             {notes}
         </ScrollView>
 
@@ -61,7 +63,7 @@ export default class Generhey extends Component {
 
   addNote()
   {
-    if(this.state.noteText){
+    if(this.state.noteText){ //The 'note' key is overuse - not necessary 
       this.state.noteArray.push( {'note' : this.state.noteText} );
       this.setState({ noteArray: this.state.noteArray });
       this.setState({ noteText: '' });
